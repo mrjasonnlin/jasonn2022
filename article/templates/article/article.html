@@ -3,7 +3,7 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'article/css/article.css' %}">
 {% endblock %}
-{% block heading %}歡迎蒞臨{% endblock %}
+{% block heading %}留言板{% endblock %}
 {% block content %}
 {% include 'article/searchForm.html' %}
 {% if user.is_superuser %}

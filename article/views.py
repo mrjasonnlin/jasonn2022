@@ -28,6 +28,7 @@ def articleCreate(request):
     '''
     template = 'article/articleCreateUpdate.html'
     if request.method == 'GET':
+        print(ArticleForm())
         return render(request, template, {'articleForm':ArticleForm()})
 
     # POST
