@@ -1,9 +1,8 @@
 {% extends 'main/base.html' %}
-
 {% block heading %}
 首頁
-<h3 style="background-color:Tomato;"><a href="/">林至丞的 Django Blog</a></h3>
+<h3 style="background-color:Tomato;"><a href="/">林至丞的 Django Blog</a>
+<a href="{% url 'main:bike' %}">林至丞的重機</a>
+</h3>
 {% endblock %}
-{% block content %}
-<div><p style="background-color:Orange;"><a href="{% url 'main:bike' %}">林至丞的 重機</a></p></div>
-{% endblock %}
+{% block content %}<p style="background-color:Orange;">這是主要內容</p>{% endblock %}
