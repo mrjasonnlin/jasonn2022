@@ -19,7 +19,7 @@ def about(request):
 
 def bike(request):
     """
-    Render the about page
+    Render the bike page
     """
     return render(request, 'main/bike.html')
 

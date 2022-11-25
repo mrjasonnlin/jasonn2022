@@ -3,12 +3,12 @@
 {% block content %}
 <p>{{ like }}</p>
 <div>
-    <h1><a href="/">林至丞的 Django Blog</a></h1>
-    <h1><a href="{% url 'main:bike' %}">林至丞的 重機</a></h1>
+    <h3><a href="/">林至丞的 Django Blog</a></h3>
+    <h3><a href="{% url 'main:bike' %}">林至丞的 重機</a></h3>
 </div>
-    <h2>這是林至丞(Jason)第一次用Django做好的部落格!</h2>
-    <p class="navbar"><h2>這是用 Class 選擇器的例子。</h2>
-<p class="navbar"><h2>{{ like }}{{ time }}</h2>
+    <h3>這是林至丞(Jason)第一次用Django做好的部落格!</h3>
+    <p class="navbar"><h3>這是用 Class 選擇器的例子。</h3>
+<p class="navbar"><h3>{{ like }}{{ time }}</h3>
 <b class="special">同一個選擇器</b>可以<i class="special">有不同的 instance。</i>
     <p class="applylarge applyred">這是多重 Class 的例子。</p>
     <p id="footer">這是用 ID 選擇器的例子。</p>
