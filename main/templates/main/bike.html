@@ -1,0 +1,12 @@
+{% load static %}
+<head>
+<title>重機</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{% static 'main/css/bike.css' %}">
+{% block css %}{% endblock %}
+</head>
+{% block content %}
+{% include 'main/menu.html' %}
+    <h2>林至丞的重機</h2>
+    <p>歡迎來到林至丞的重機</p>
+{% endblock %}
