@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -24,11 +21,10 @@ SECRET_KEY = '51nf8!s8+wrc%*mpgcb62-l6!!0nvt*@wbp_$j4&aos282fe^z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-if 'DYNO' in os.environ:    # Running on Heroku
+if 'DYNO' in os.environ:  # Running on Heroku
     DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -41,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'article',
+    'upload_profile',
     'main',
 ]
 
@@ -74,11 +71,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:   # Running on the development environment
+if DEBUG:  # Running on the development environment
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -89,13 +85,13 @@ if DEBUG:   # Running on the development environment
             'PORT': '',
         }
     }
-else:   # Running on Heroku
+else:  # Running on Heroku
     # Parse database configuration from $DATABASE_URL
     import dj_database_url
-    DATABASES = {'default':dj_database_url.config()}
+
+    DATABASES = {'default': dj_database_url.config()}
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -115,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -129,16 +124,26 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'account.User'
 
+MEDIA_URL = '/main/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/main/media/')
+
 LOGIN_URL = '/account/login/'
 
 # For Heroku deployment
 STATIC_ROOT = 'staticfiles'
-
+# STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# STATICFILES_DIRS = (
+#    ('css',os.path.join(STATIC_ROOT,'css')).replace('\\','/'),
+#    ('js',os.path.join(STATIC_ROOT,'js'))).replace('\\','/'),
+#    ('images',os.path.join(STATIC_ROOT,'images'))).replace('\\','/'),
+#    ('upload',os.path.join(STATIC_ROOT,'upload')).replace('\\','/'),
+# )

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from article.models import Article, Comment
+from upload_profile.models import Photo
 
 
 class CommentAdmin(admin.ModelAdmin):
@@ -8,12 +9,22 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ['article', 'content']
     search_fields = ['content']
     list_editable = ['content']
- 
- 
+
     class Meta:
         model = Comment
 
 
-admin.site.register(Article)
-admin.site.register(Comment, CommentAdmin)
+class PhotoAdmin(admin.ModelAdmin):
+    list_display = ['user_name', 'upload_date', 'introduce']
+    list_display_links = ['user_name']
+    list_filter = ['user_name', 'upload_date']
+    search_fields = ['upload_date']
+    list_editable = ['upload_date']
 
+    class Meta:
+        model = Photo
+
+
+admin.site.register(Article)
+admin.site.register(Photo, PhotoAdmin)
+admin.site.register(Comment, CommentAdmin)

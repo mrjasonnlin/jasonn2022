@@ -3,6 +3,7 @@
 首頁
 <h3 style="background-color:Tomato;"><a href="/">林至丞的 Django Blog</a>
 <a href="{% url 'main:bike' %}">林至丞的重機</a>
+<a href="{% url 'upload_profile:upload_profile' %}">使用者資料上傳</a>
 </h3>
 {% endblock %}
 {% block content %}<p style="background-color:Orange;">這是主要內容</p>{% endblock %}
