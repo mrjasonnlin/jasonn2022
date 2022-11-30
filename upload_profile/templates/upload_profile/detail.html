@@ -1,13 +1,15 @@
 {% extends 'main/base.html' %}
 {% block heading %}
 所有使用者
+<a href="{% url 'upload_profile:add' %}">上傳使用者資料</a>
+<a href="{% url 'upload_profile:detail' %}">查看使用者資料</a>
 {% endblock %}
 
 {% block content %}
 
     {% for user in list_user %}
         <h5>{{ user.user_name }}</h5>
-        <img src="{{ user.user_image.url }}" alt=""  width="50" height="60">
+        <p><img src="/static{{ user.user_image.url }}" alt=""  width="100" height="150"></p>
         <!--<img src="/static/main/img/bike.jpg" alt=""  width="50" height="60"> -->
         <div>
             {% for line in user.introduce.readlines %}

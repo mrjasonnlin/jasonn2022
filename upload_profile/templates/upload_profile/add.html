@@ -1,16 +1,18 @@
 {% extends 'main/base.html' %}
 {% block heading %}
 添加使用者資料
+<a href="{% url 'upload_profile:add' %}">上傳使用者資料</a>
+<a href="{% url 'upload_profile:detail' %}">查看使用者資料</a>
 {% endblock %}
 
 {% block content %}
     <form action="/upload_profile/add/" enctype="multipart/form-data" method="post">
-        {% csrf_token %} # 防止跨站請求偽造
+        {% csrf_token %} <!--防止跨站請求偽造-->
         <label for="user_name">名字:</label>
         <input type="text" name="user_name"><br><br>
-        <label for="user_image">大頭貼:</label><br>
+        <label for="user_image">大頭貼:(.png)</label><br>
         <input type="file" name="user_image"><br><br>
-        <label for="introduce">自我介紹:</label><br>
+        <label for="introduce">自我介紹:(.txt)</label><br>
         <input type="file" name="introduce"><br><br>
         <input type="submit" value="提交">
 
