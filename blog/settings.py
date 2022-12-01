@@ -68,7 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'django.template.context_processors.media',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -132,15 +132,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'account.User'
 
-MEDIA_URL = '/main/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/main/media/'  # 訪問文件的URL根目錄
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 上傳文件儲存根目錄
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/account/login/'
 
 # For Heroku deployment
-STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
