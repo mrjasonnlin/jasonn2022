@@ -2,8 +2,8 @@
 {% load static %}
 {% block heading %}
 所有使用者
-<a href="{% url 'upload_profile:add' %}">上傳使用者資料</a>
-<a href="{% url 'upload_profile:detail' %}">查看使用者資料</a>
+<button type="button" class="btn btn-primary"><a href="{% url 'upload_profile:add' %}">上傳使用者資料</a></button>
+<button type="button" class="btn btn-primary"><a href="{% url 'upload_profile:detail' %}">查看使用者資料</a></button>
 {% endblock %}
 
 {% block content %}

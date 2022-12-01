@@ -5,13 +5,12 @@
 {% endblock %}
 {% block heading %}留言板{% endblock %}
 {% block content %}
+<hr>
 {% include 'article/searchForm.html' %}
 {% if user.is_superuser %}
-  <p class="inlineBlock"><a class="btn" href="{% url 'article:articleCreate' %}">新增文章</a></p>
-  <br><br>
-{% endif %}
 <hr>
-
+  <p class="inlineBlock"><a class="btn" href="{% url 'article:articleCreate' %}">新增文章</a></p>
+{% endif %}
 {% for article, comments in articles.items %}
   <h3 class="inlineBlock"><a href="{% url 'article:articleRead' article.id %}">{{ article.title }}</a></h3>
   {% if user.is_superuser %}

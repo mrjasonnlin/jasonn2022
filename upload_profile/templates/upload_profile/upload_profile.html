@@ -2,7 +2,10 @@
 {% load static %}
 {% block heading %}
 首頁
-<a href="{% url 'upload_profile:add' %}">上傳使用者資料</a>
-<a href="{% url 'upload_profile:detail' %}">查看使用者資料</a>
+<button type="button" class="btn btn-primary"><a href="{% url 'upload_profile:add' %}">上傳使用者資料</a></button>
+<button type="button" class="btn btn-primary"><a href="{% url 'upload_profile:detail' %}">查看使用者資料</a></button>
 {% endblock %}
-{% block content %}<p style="background-color:Orange;">這是主要內容</p>{% endblock %}
+{% block content %}
+    <br>
+    <p style="background-color:Orange;">這是主要內容</p>
+{% endblock %}
