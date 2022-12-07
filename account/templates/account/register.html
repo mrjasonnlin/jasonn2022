@@ -1,6 +1,7 @@
 {% extends "main/base.html" %}
 {% block heading %}註冊{% endblock %}
 {% block content %}
+<br>
 <form method="post" action="{% url 'account:register' %}">
   {% csrf_token %}
   {{ userForm.as_p }}

@@ -32,12 +32,12 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',  # 管理者後台
+    'django.contrib.auth',  # 認證授權管理
+    'django.contrib.contenttypes',  # 內容類型管理
+    'django.contrib.sessions',  # session 管理
+    'django.contrib.messages',  # 訊息管理
+    'django.contrib.staticfiles',  # 靜態檔案管理
     'account',
     'article',
     'upload_profile',
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'account.User'
 
 MEDIA_URL = '/main/media/'  # 訪問文件的URL根目錄
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 上傳文件儲存根目錄
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 上傳文件儲存根目錄
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
