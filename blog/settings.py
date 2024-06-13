@@ -83,7 +83,7 @@ if DEBUG:  # Running on the development environment
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'blogdb2',
+            'NAME': 'blogdb',
             'USER': 'blog',
             'PASSWORD': 'blog',
             'HOST': 'localhost',
